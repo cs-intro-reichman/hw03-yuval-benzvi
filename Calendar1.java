@@ -18,20 +18,25 @@ public class Calendar1 {
 	    // Prints each date dd/mm/yyyy in a separate line. If the day is a Sunday, prints "Sunday".
 	    // The following variable, used for debugging purposes, counts how many days were advanced so far.
 	    int debugDaysCounter = 0; 
+	    int countSunday = 0;
 	    //// Write the necessary initialization code, and replace the condition
 	    //// of the while loop with the necessary condition 
 	 	while (year < 2000) {
 	 		System.out.print(dayOfMonth+"/"+month+"/"+year);
-	 		if (dayOfWeek == 1) {
+	 		if (dayOfWeek == 1 && dayOfMonth == 1) {
 	 			System.out.print(" Sunday");
-	 		} 		
+	 			countSunday++;
+	 		} else { 
+	 			if (dayOfWeek == 1) {
+	 			System.out.print(" Sunday");
+	 			}} 		
 	 		advance();
 	 		System.out.println();
 	 		debugDaysCounter++;
 	 		//// If you want to stop the loop after n days, replace the condition of the
 	 		//// if statement with the condition (debugDaysCounter == n)
         }
-	 	//// Write the necessary ending code here
+	 	System.out.println("During the 20th century, " + countSunday + " Sundays fell on the first day of the month");
 	 }
 	
 	 // Advances the date (day, month, year) and the day-of-the-week.
