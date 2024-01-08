@@ -11,7 +11,21 @@ public class UniqueChars {
      * unless they are space characters.
      */
     public static String uniqueChars(String s) {
-        // Replace the following statement with your code
-        return null;
+        String unique = "";
+        boolean flag = false;
+        for (int i = 0; i < s.length(); i++) {
+            flag = false;
+            int j = 0;
+            while (j < i && flag == false) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    flag = true;
+                }
+                j++;
+            }
+            if (flag == false || (flag == true && s.charAt(i) == 32)) {
+                unique = unique + s.charAt(i);
+            }
+        }
+        return unique;
     }
 }
