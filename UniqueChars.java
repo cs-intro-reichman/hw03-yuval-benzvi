@@ -16,6 +16,9 @@ public class UniqueChars {
         for (int i = 0; i < s.length(); i++) {
             flag = false;
             int j = 0;
+            /* it is a bit strange what going on here
+                the while and flag could be done with a for and even better in a helper function
+                */
             while (j < i && flag == false) {
                 if (s.charAt(i) == s.charAt(j)) {
                     flag = true;
